@@ -6,9 +6,6 @@ job('Aplicacion Node.js Docker DSL') {
             node / gitConfigEmail('egmartin83@gmail.com')
         }
     }
-    triggers {
-        scm('H/7 * * * *')
-    }
     wrappers {
         nodejs('nodejs')
     }
