@@ -1,4 +1,4 @@
-job('Aplicacion Node.js Docker DSL') {
+job('Aplicacion Node.js Docker DSL EMITO') {
     description('Aplicación Node JS Docker DSL para el curso de Jenkins')
     scm {
         git('https://github.com/egmartin83/nodejsapp.git', 'master') { node ->
@@ -10,13 +10,11 @@ job('Aplicacion Node.js Docker DSL') {
         nodejs('nodejs')
     }
     steps {
-        dockerBuildAndPublish {
-            repositoryName('egmartin83/nodejsapp')
-            tag('${GIT_REVISION,length=7}')
-            registryCredentials('docker-hub')
-            forcePull(false)
-            createFingerprints(false)
-            skipDecorate()
+        DockerBuilderPublisher {
+            image ('egmartin83/nodejsapp')
+            cloud ('docker')
+            pushCredentialsId ('dockerhub')
+            pushOnSuccess (true)
         }
     }
     publishers {
