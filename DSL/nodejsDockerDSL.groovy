@@ -18,7 +18,6 @@ job('Aplicacion Node.js Docker DSL EMITO') {
 	    serverCredentials('3c1cb828-0a01-48b0-8522-9cde5b1cfb00')
             tag('${GIT_REVISION,length=7}')
             registryCredentials('dockerhub')
-            forcePull(false)
             createFingerprints(false)
             skipDecorate()
         }
