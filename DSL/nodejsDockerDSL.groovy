@@ -20,6 +20,7 @@ job('Aplicacion Node.js Docker DSL EMITO') {
             registryCredentials('dockerhub')
             createFingerprints(false)
             skipDecorate()
+	    dockerInstallation('docker')
         }
     }
     publishers {
