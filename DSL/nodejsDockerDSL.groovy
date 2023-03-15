@@ -10,7 +10,6 @@ job('Aplicacion Node.js Docker DSL EMITO') {
     }
     wrappers {
         nodejs('nodejs')
-	customTools('docker-inst')
     }
     steps {
         dockerBuildAndPublish {
