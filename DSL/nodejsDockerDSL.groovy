@@ -12,6 +12,7 @@ job('Aplicacion Node.js Docker DSL EMITO') {
     steps {
         dockerBuildAndPublish {
             repositoryName('egmartin83/nodejsapp')
+	    labelExpression('jenkins-agent')
 	    dockerHostURI('tcp://192.168.49.2:2376')
 	    serverCredentials('3c1cb828-0a01-48b0-8522-9cde5b1cfb00')
             tag('${GIT_REVISION,length=7}')
